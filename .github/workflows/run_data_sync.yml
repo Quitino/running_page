@@ -132,4 +132,4 @@ jobs:
            git pull --rebase origin main
           git add .
           git commit -m 'update new runs' || echo "nothing to commit"
-          git push  -u origin main || echo "nothing to push"
+          git push  --force  origin main || echo "nothing to push"
