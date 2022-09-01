@@ -26,7 +26,7 @@ env:
   TITLE: Quitino Running
   MIN_GRID_DISTANCE: 5 # change min distance here
   TITLE_GRID: Over 5km Runs # also here
-  GITHUB_NAME: Quitino
+  GITHUB_NAME: quitino
   GITHUB_EMAIL: fb_941219@163.com
 
 jobs:
