@@ -26,7 +26,7 @@ env:
   TITLE: Quitino
   MIN_GRID_DISTANCE: 5 # change min distance here
   TITLE_GRID: Over 5km Runs # also here
-  GITHUB_NAME: quitino
+  GITHUB_NAME: Quitino
   GITHUB_EMAIL: fb_941219@163.com
 
 jobs:
@@ -129,7 +129,7 @@ jobs:
         run: |
           git config --local user.email "${{ env.GITHUB_EMAIL }}"
           git config --local user.name "${{ env.GITHUB_NAME }}"
-           git pull --rebase origin main
+          git pull --rebase origin main
           git add .
           git commit -m 'update new runs' || echo "nothing to commit"
           git push  origin main --force || echo "nothing to push"
