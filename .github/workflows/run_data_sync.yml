@@ -142,4 +142,4 @@ jobs:
           git config --local user.name "${{ env.GITHUB_NAME }}"
           git add .
           git commit -m 'update new runs' || echo "nothing to commit"
-          git push  origin main --force || echo "nothing to push"
+          git push  origin master --force || echo "nothing to push"
