@@ -74,7 +74,7 @@ export {
   MAP_HEIGHT,
 };
 
-const nike = 'rgb(224,237,94)'; // if you want change the main color change here src/styles/variables.scss
+const nike = 'rgb(152,251,152)'; // if you want change the main color change here src/styles/variables.scss
 
 // If your map has an offset please change this line
 // issues #92 and #198
