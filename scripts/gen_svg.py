@@ -220,7 +220,6 @@ def main():
         )
     p.set_language(args.language)
     p.athlete = args.athlete
-    p.athlete_font_size = 12  # 添加此行并设置字号大小
 
     if args.title:
         p.title = args.title
