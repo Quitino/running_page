@@ -64,7 +64,7 @@ jobs:
             imported.json
           key: ${{ inputs.data_cache_prefix }}-${{ github.sha }}-${{ github.run_id }}
           restore-keys: |
-            inputs.datacacheprefix−{{ inputs.data_cache_prefix }}-{{ github.sha }}-
+            ${{ inputs.data_cache_prefix }}-${{ github.sha }}-
             ${{ inputs.data_cache_prefix }}-
 
       - name: Setup Node.js environment
@@ -81,7 +81,8 @@ jobs:
       - name: Get pnpm store directory
         shell: bash
         run: |
-          echo "STORE_PATH=(pnpmstorepath−−silent)">>(pnpm store path --silent)" >> GITHUB_ENV
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
       - uses: actions/cache@v3
         name: Setup pnpm cache
         with:
