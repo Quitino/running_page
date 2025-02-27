@@ -63,6 +63,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          
+      - name: Check code style with Black
+        run: |
+          black --check .
 
       - name: Cache Data Files
         if: env.SAVE_DATA_IN_GITHUB_CACHE == 'true'
