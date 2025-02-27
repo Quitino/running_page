@@ -126,7 +126,7 @@ jobs:
         run: |
           # make garimin secret string `python run_page/get_garmin_secret.py ${email} ${password} --is-cn
           # 这里需要离线执行`python run_page/get_garmin_secret.py ${email} ${password} --is-cn`然后将输出结果放入github 的 secret里面去
-          python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }} --is-cn
+          python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }} --is-cn --tcx
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
         # python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }}  --only-run --is-cn
 
