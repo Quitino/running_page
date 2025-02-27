@@ -5,15 +5,18 @@
 
 
 class PosterError(Exception):
-    "Base class for all errors"
+    """Base class for all errors."""
+
     pass
 
 
 class TrackLoadError(PosterError):
-    "Something went wrong when loading a track file, we just ignore this file and continue"
+    """Something went wrong when loading a track file, we just ignore this file and continue."""
+
     pass
 
 
 class ParameterError(PosterError):
-    "Something's wrong with user supplied parameters"
+    """Something's wrong with user supplied parameters."""
+
     pass
