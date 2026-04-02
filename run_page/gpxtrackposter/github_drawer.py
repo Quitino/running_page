@@ -132,15 +132,18 @@ class GithubDrawer(TracksDrawer):
                     )
                 )
 
-            rect_x = 10.0
-            dom = (2.6, 2.6)
+            num_columns = 54
+            col_spacing = min(3.5, size.x / num_columns)
+            dom_size = col_spacing * 2.6 / 3.5
+            rect_x = offset.x
+            dom = (dom_size, dom_size)
 
-            # add every day of this year for 53 weeks and per week has 7 days
-            for i in range(54):
+            # add every day of this year for 54 weeks and per week has 7 days
+            for i in range(num_columns):
                 # the first day of the first week of the year may not Monday
                 # so we need to skip some empty spaces
                 if i == 0:
-                    rect_y = offset.y + year_size + 2 + 3.5 * first_day_weekday
+                    rect_y = offset.y + year_size + 2 + col_spacing * first_day_weekday
                 else:
                     # the first day of the n week (n >1) must be  Monday
                     # so set first_day_weekday = 0
@@ -149,7 +152,7 @@ class GithubDrawer(TracksDrawer):
                 for j in range(7 - first_day_weekday):
                     if int(github_rect_day.year) > year:
                         break
-                    rect_y += 3.5
+                    rect_y += col_spacing
                     color = self.empty_color
                     date_title = str(github_rect_day)
                     if date_title in self.poster.tracks_by_date:
@@ -172,5 +175,5 @@ class GithubDrawer(TracksDrawer):
                     rect.set_desc(title=date_title)
                     dr.add(rect)
                     github_rect_day += datetime.timedelta(1)
-                rect_x += 3.5
-            offset.y += 3.5 * 9 + year_size + 1.0
+                rect_x += col_spacing
+            offset.y += col_spacing * 9 + year_size + 1.0
