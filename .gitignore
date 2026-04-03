@@ -29,3 +29,6 @@ route.svg
 running_page_me
 .claude
 .vscode
+.github/prompts/
+.github/skills/
+openspec/
